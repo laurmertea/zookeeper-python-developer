@@ -175,7 +175,7 @@ Switching on camera from habitat with rabbits...
 It seems there will be more rabbits soon!"""
 
 animals = [camel, lion, deer, goose, bat, rabbit]
-user_input = input("Which habitat # do you need?")
+user_input = input("Which habitat # do you need? You can also type `exit` to leave the zoo!")
 
 while user_input != "exit":
    print(animals[int(user_input)])
