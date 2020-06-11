@@ -178,26 +178,27 @@ It seems there will be more rabbits soon!"""
 
 animals_info = ['camel','lion','deer','goose','bat','rabbit']
 animals = [camel,lion,deer,goose,bat,rabbit]
-
-print("Which habitat # do you need?")
-print("You can type `info` to see which habitats are available for a visit.")
-print("You can also type `exit` to leave the zoo!")
-user_input = input()
+user_input = ''
 
 while user_input != "exit":
-    if user_input != "info":
-        if 0 <= int(user_input) < len(animals):
-            print(animals[int(user_input)])
-        else:
-            print("Habitat " + user_input + " is not available, yet!")
-    else:
-        index = 0
-        while index < len(animals_info):
-            print("Type " + str(index) + " to see the " + animals_info[index])
-            index += 1
-
     print("Which habitat # do you need?")
     print("You can type `info` to see which habitats are available for a visit.")
     print("You can also type `exit` to leave the zoo!")
     user_input = input()
+    
+    if user_input.isdigit():
+        if 0 <= int(user_input) < len(animals):
+            print(animals[int(user_input)])
+        else:
+            print("Habitat " + user_input + " is not available, yet!")
+    elif isinstance(user_input, str):
+        if user_input == "info":
+            index = 0
+            while index < len(animals_info):
+                print("Type " + str(index) + " to see the " + animals_info[index])
+                index += 1
+        else:
+            print("Option " + user_input + " is not recognized!")
+    else:
+       print("Unsupported option!")
 print("See you!")
