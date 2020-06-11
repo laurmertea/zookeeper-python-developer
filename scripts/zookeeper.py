@@ -1,3 +1,5 @@
+import numpy as np
+
 # Description
 # It's time to make your project more convenient and understandable.
 # In this final stage, your software will be ready for use by the zoo staff.
@@ -174,10 +176,25 @@ Switching on camera from habitat with rabbits...
 (" ~----( ~   Y.  )
 It seems there will be more rabbits soon!"""
 
-animals = [camel, lion, deer, goose, bat, rabbit]
-user_input = input("Which habitat # do you need? You can also type `exit` to leave the zoo!")
+animals_info = ['camel','lion','deer','goose','bat','rabbit']
+animals = [camel,lion,deer,goose,bat,rabbit]
+
+print("Which habitat # do you need?")
+print("You can type `info` to see which habitats are available for a visit.")
+print("You can also type `exit` to leave the zoo!")
+user_input = input()
 
 while user_input != "exit":
-   print(animals[int(user_input)])
-   user_input = input("Which habitat # do you need?")
+    if user_input != "info":
+        print(animals[int(user_input)])
+    else:
+        index = 0
+        while index < len(animals_info):
+            print("Type " + str(index) + " to see the " + animals_info[index])
+            index += 1
+
+    print("Which habitat # do you need?")
+    print("You can type `info` to see which habitats are available for a visit.")
+    print("You can also type `exit` to leave the zoo!")
+    user_input = input()
 print("See you!")
