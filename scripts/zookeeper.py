@@ -1,5 +1,3 @@
-import numpy as np
-
 # Description
 # It's time to make your project more convenient and understandable.
 # In this final stage, your software will be ready for use by the zoo staff.
