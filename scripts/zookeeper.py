@@ -186,7 +186,10 @@ user_input = input()
 
 while user_input != "exit":
     if user_input != "info":
-        print(animals[int(user_input)])
+        if 0 <= int(user_input) < len(animals):
+            print(animals[int(user_input)])
+        else:
+            print("Habitat " + user_input + " is not available, yet!")
     else:
         index = 0
         while index < len(animals_info):
